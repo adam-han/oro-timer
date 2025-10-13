@@ -10,12 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button {
+                let temp_timer = TimerClass(seconds_left: 10)
+                temp_timer.startTimer()
+            } label: {
+                Text("Start Timer")
+            }
         }
-        .padding()
     }
 }
 
