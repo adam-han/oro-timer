@@ -10,12 +10,22 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            let temp_timer = TimerClass(seconds_left: 10)
+            // Start Timer Button
             Button {
-                let temp_timer = TimerClass(seconds_left: 10)
                 temp_timer.startTimer()
             } label: {
                 Text("Start Timer")
             }
+            
+            // Stop Timer Button
+            Button {
+                temp_timer.stopTimer()
+            } label: {
+                Text("Stop Timer")
+            }
+            
+
         }
     }
 }
