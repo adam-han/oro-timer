@@ -67,12 +67,12 @@ struct ContentView: View {
             
             
             if isRunning {
-                // Stop Timer Button
+                // Pause Timer Button
                 Button {
                     main_timer.stopTimer()
                     isRunning = false
                 } label: {
-                    Text("Stop Timer")
+                    Text("Pause")
                 }
             }
             else {
@@ -81,7 +81,7 @@ struct ContentView: View {
                     main_timer.startTimer()
                     isRunning = true
                 } label: {
-                    Text("Start Timer")
+                    Text("Start")
                 }
             }
             
