@@ -30,6 +30,10 @@ class TimerClass: ObservableObject {
         timer = nil
     }
     
+    func setTimeLeft(seconds_value: Int) {
+        self.seconds_left = seconds_value
+    }
+    
     // Runs every every time according to the Timer's fire interval
     @objc func timerFired() {
         if self.seconds_left > 0 {
