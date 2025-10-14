@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var main_timer = TimerClass(seconds_left: 10)
+    
     var body: some View {
         VStack {
-            let temp_timer = TimerClass(seconds_left: 10)
             // Start Timer Button
             Button {
-                temp_timer.startTimer()
+                main_timer.startTimer()
             } label: {
                 Text("Start Timer")
             }
             
             // Stop Timer Button
             Button {
-                temp_timer.stopTimer()
+                main_timer.stopTimer()
             } label: {
                 Text("Stop Timer")
             }
