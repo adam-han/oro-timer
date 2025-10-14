@@ -7,12 +7,17 @@
 
 import SwiftUI
 
+let FOCUS_TIME: Int = 25 * 60
+
 struct ContentView: View {
     
-    @StateObject var main_timer = TimerClass(seconds_left: 10)
+    @StateObject var main_timer = TimerClass(seconds_left: FOCUS_TIME)
     
     var body: some View {
         VStack {
+            // Displays the time remaining
+            Text("\(main_timer.seconds_left) seconds left")
+            
             // Start Timer Button
             Button {
                 main_timer.startTimer()
