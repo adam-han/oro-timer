@@ -1,0 +1,7 @@
+things to add:
+[ ] - a way for users to edit the lengths of their focus, short break, and long break sessions
+[ ] - make the progress bar look nice
+[ ] - a stats tab (let's them see the number of sessions or length of time for focus and breaks in that day)
+[ ] - make progress bar color depend on current mode
+[ ] - let users customize the colour associated with each mode (this should only change progress bar?)
+[ ] - allow the use of keyboard shortcuts (< and > for switch between modes, {space bar} to start and pause, etc.)
