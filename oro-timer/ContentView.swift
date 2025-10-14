@@ -10,7 +10,7 @@ import SwiftUI
 let FOCUS_TIME: Int = 25 * 60
 
 struct ContentView: View {
-    
+    @State private var isRunning = false
     @StateObject var main_timer = TimerClass(seconds_left: FOCUS_TIME)
     
     var body: some View {
@@ -18,19 +18,29 @@ struct ContentView: View {
             // Displays the time remaining
             Text("\(main_timer.seconds_left) seconds left")
             
-            // Start Timer Button
-            Button {
-                main_timer.startTimer()
-            } label: {
-                Text("Start Timer")
+            
+            if isRunning {
+                // Stop Timer Button
+                Button {
+                    main_timer.stopTimer()
+                    isRunning = false
+                } label: {
+                    Text("Stop Timer")
+                }
+            }
+            else {
+                // Start Timer Button
+                Button {
+                    main_timer.startTimer()
+                    isRunning = true
+                } label: {
+                    Text("Start Timer")
+                }
             }
             
-            // Stop Timer Button
-            Button {
-                main_timer.stopTimer()
-            } label: {
-                Text("Stop Timer")
-            }
+           
+            
+            
             
 
         }
