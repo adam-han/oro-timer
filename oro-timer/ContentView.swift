@@ -27,7 +27,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             // Displays the time remaining
-            Text("\(main_timer.seconds_left) seconds left")
+            displayTimeRemaining(total_seconds: main_timer.seconds_left)
             
             // HStack for Session Mode Buttons
             HStack {
