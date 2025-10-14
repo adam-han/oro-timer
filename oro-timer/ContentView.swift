@@ -65,26 +65,45 @@ struct ContentView: View {
             }
             
             
-            
-            if isRunning {
-                // Pause Timer Button
+            HStack {
+                if isRunning {
+                    // Pause Timer Button
+                    Button {
+                        main_timer.stopTimer()
+                        isRunning = false
+                    } label: {
+                        Text("Pause")
+                    }
+                }
+                else {
+                    // Start Timer Button
+                    Button {
+                        main_timer.startTimer()
+                        isRunning = true
+                    } label: {
+                        Text("Start")
+                    }
+                }
+
+                // Reset Button
                 Button {
+                    // resets the time left
+                    switch current_mode {
+                    case .focus:
+                        main_timer.setTimeLeft(seconds_value: FOCUS_TIME)
+                    case .short_break:
+                        main_timer.setTimeLeft(seconds_value: SHORT_BREAK_TIME)
+                    case .long_break:
+                        main_timer.setTimeLeft(seconds_value: LONG_BREAK_TIME)
+                    }
                     main_timer.stopTimer()
                     isRunning = false
                 } label: {
-                    Text("Pause")
-                }
-            }
-            else {
-                // Start Timer Button
-                Button {
-                    main_timer.startTimer()
-                    isRunning = true
-                } label: {
-                    Text("Start")
+                    Text("Reset")
                 }
             }
             
+                        
 
         }
     }
