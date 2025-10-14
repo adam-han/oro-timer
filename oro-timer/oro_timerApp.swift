@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Foundation
+internal import Combine
 
-class TimerClass {
+
+class TimerClass: ObservableObject {
     var timer: Timer?
-    var seconds_left: Int = 0
+    @Published var seconds_left: Int = 0
     
     init(timer: Timer? = nil, seconds_left: Int = 0) {
         self.timer = timer
