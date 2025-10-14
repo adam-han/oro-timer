@@ -13,6 +13,8 @@ struct oro_timerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .containerBackground(.ultraThinMaterial, for: .window)
+                .toolbarBackgroundVisibility(.hidden, for: .windowToolbar)
         }
     }
 }
