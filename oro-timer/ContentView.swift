@@ -29,6 +29,16 @@ struct ContentView: View {
             // Displays the time remaining
             displayTimeRemaining(total_seconds: main_timer.seconds_left)
             
+            // Displays progress bar
+            switch current_mode {
+            case .focus:
+                ProgressView(value: (1 - Float(main_timer.seconds_left) / Float(FOCUS_TIME)))
+            case .short_break:
+                ProgressView(value: (1 - Float(main_timer.seconds_left) / Float(SHORT_BREAK_TIME)))
+            case .long_break:
+                ProgressView(value: (1 - Float(main_timer.seconds_left) / Float(LONG_BREAK_TIME)))
+            }
+            
             // HStack for Session Mode Buttons
             HStack {
                 // Button switches to Focus Session
